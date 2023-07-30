@@ -1,0 +1,17 @@
+.sortButton{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  mat-form-field{
+    margin-right:5%;
+  }
+  mat-card{
+    width: 50%;
+    margin-bottom: 3%;
+    background-color: aliceblue;
+  }
+  .tasks{
+    display: flex;
+    justify-content: center;
+  }

@@ -7,7 +7,7 @@ import { Todo } from '../Interfaces/todo';
 })
 export class ApiService {
 
-  private baseUrl : string = ' http://localhost:3000/tasksList'
+  private baseUrl : string = ' https://json-server-lxir.onrender.com/tasks'
 
   constructor(private http:HttpClient) { }
 
