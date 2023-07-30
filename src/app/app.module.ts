@@ -44,9 +44,9 @@ import { TodoEffects } from './Store/todo-effect';
 
     BrowserModule,
     AppRoutingModule,
-    EntityDataModule.forRoot(entityConfig),
     StoreModule.forRoot({todos: todoReducer}),
     EffectsModule.forRoot([TodoEffects]),
+    EntityDataModule.forRoot(entityConfig),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
 
     HttpClientModule,

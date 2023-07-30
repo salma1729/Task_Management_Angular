@@ -9,6 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import { FormBuilder } from '@angular/forms';
 import { NgConfirmService } from 'ng-confirm-box';
+import { ngxCsv } from 'ngx-csv/ngx-csv';
 
 @Component({
   selector: 'app-dialog',
@@ -18,9 +19,11 @@ import { NgConfirmService } from 'ng-confirm-box';
 export class TodoListComponent {
 
   sortList:String[] = ["Due date","Priority","Status"];
+  statusList:String[] = ["To-do","In-progress","Completed"];
   keyToSort!: String;
   taskList : Todo[] = []; 
   tofetch : Boolean = true;
+  status !: String[]
 
   constructor(private api:ApiService, private router:Router,private formBuilder:FormBuilder,
      private toastService:NgToastService, private confirmService: NgConfirmService){
@@ -109,6 +112,22 @@ SortTasks(keyToSort : String){
     console.log("Tasks updated after calling",this.taskList);
     this.getTasks();
     
+  }
+
+  exportToCsv(){
+    var options = { 
+      fieldSeparator: ',',
+      quoteStrings: '"',
+      decimalseparator: '.',
+      showLabels: true, 
+      showTitle: true,
+      title: 'Todo List',
+      useBom: true,
+      headers: ["Id", "Title", "Description", "Duedate", "Priority",]
+    };
+   
+    new ngxCsv(this.taskList, "Todo List", options);
+
   }
 
 }
