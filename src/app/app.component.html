@@ -1,0 +1,16 @@
+<mat-toolbar color="primary" class="header">
+  <div>  
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>assignment</mat-icon>
+  </button>
+  <span>Task Management System</span>
+</div>
+  <div class="div-buttons">
+    <button mat-raised-button [routerLink]="'/addTodo'" color="accent">Add New Todo</button>
+    <button mat-raised-button [routerLink]="'/todoList'" color="accent">Todo List</button>
+    <button mat-raised-button [routerLink] = "'/todoHistory'" color="accent">History</button>
+  </div>
+
+</mat-toolbar>
+
+<router-outlet></router-outlet>

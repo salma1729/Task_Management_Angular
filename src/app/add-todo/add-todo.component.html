@@ -1,0 +1,43 @@
+<div class="card-container">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Add New Task</mat-card-title>
+      </mat-card-header>
+      <form [formGroup]="todoForm">
+      <mat-card-content>
+          <mat-form-field appearance="outline">
+            <mat-label>Title</mat-label>
+            <input formControlName="title" matInput placeholder="Enter your Task Name" />
+          </mat-form-field>
+  
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Task Description</mat-label>
+              <textarea formControlName="description" matInput placeholder="Ex. Enter the Description..."></textarea>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outline">
+              <mat-label>Task Due Date</mat-label>
+              <input formControlName="duedate" matInput [matDatepicker]="picker2">
+              <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker #picker2 color="primary"></mat-datepicker>
+          </mat-form-field>
+          <label id="example-radio-group-label"><h1>Priority Level</h1> </label>
+          <mat-radio-group class="example-radio-group" color="primary" formControlName="priority">
+              <mat-radio-button class="example-radio-button"  value = "High">High </mat-radio-button>
+              <mat-radio-button class="example-radio-button"  value = "JMedium">Medium </mat-radio-button>
+              <mat-radio-button class="example-radio-button"  value = "Low">Low </mat-radio-button>
+          </mat-radio-group>
+      </mat-card-content> 
+    <div mat-dialog-action>
+      <button mat-raised-button *ngIf=!isUpdateActive (click)="addTasks()" color="primary" style="margin: 5%;">Submit</button>
+      <button mat-raised-button *ngIf=isUpdateActive  (click)="updateTasks()"  color="primary" style="margin: 5%;">Update</button>
+  </div>
+  </form> 
+  </mat-card> 
+  </div>
+  
+  
+  
+  
+  
+  

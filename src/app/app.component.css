@@ -1,0 +1,12 @@
+mat-toolbar{
+    margin-bottom: 2%;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+.div-buttons{
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly;
+}

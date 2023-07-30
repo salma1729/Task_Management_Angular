@@ -1,0 +1,16 @@
+.card-container{
+    display: flex;
+    justify-content: center;
+}
+mat-card{
+    width:30%;
+    margin-top: 5vh;
+}
+mat-form-field{
+    padding-top: 5px;
+    width: 90%;
+}
+mat-raised-button{
+    margin: 50px;
+    text-align: end;
+}
